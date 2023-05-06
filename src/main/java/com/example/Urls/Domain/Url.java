@@ -61,4 +61,15 @@ public class Url {
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
+
+    @Override
+    public String toString() {
+        return "Url{" +
+                "id='" + id + '\'' +
+                ", url='" + url + '\'' +
+                ", userId='" + userId + '\'' +
+                ", urlShortened='" + urlShortened + '\'' +
+                ", createdAt=" + createdAt +
+                '}';
+    }
 }

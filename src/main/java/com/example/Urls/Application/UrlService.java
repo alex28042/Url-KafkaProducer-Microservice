@@ -6,6 +6,8 @@ import com.example.Urls.Infrastructure.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UrlService {
     @Autowired
@@ -14,6 +16,10 @@ public class UrlService {
     @Autowired
     private KafkaProducer kafkaProducer;
 
+    public List<Url> findUrlsByUserId(String userId) {
+        return urlRepository.findUrlByUserId(userId);
+    }
+
     public Url save(Url url) {
         Url urlCreated = urlRepository.save(url);
 
@@ -21,4 +27,5 @@ public class UrlService {
 
         return urlCreated;
     }
+
 }
